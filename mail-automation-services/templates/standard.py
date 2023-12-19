@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+body="""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,4 +10,4 @@
     <p>we have created the tasks for you successfully</p>
     <p>Regards,</p>
     <p>Mail Automation Services</p>
-</html>
+</html>"""

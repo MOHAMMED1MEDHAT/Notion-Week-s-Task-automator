@@ -6,6 +6,7 @@ from email.message import EmailMessage
 
 #local imports
 import config
+from templates import standard
 
 #Define the progress bar function
 def progressBar(progress,total):
@@ -23,7 +24,8 @@ receivers_emails = list(config.RECIEVERS_EMAIL_ADDRESSES)
 
 # Set the subject and body of the email
 subject =config.EMAIL_SUBJECT
-if(config.EMAIL_BODY_TYPE=="html"):body =fs.open_fs(config.EMAIL_BODY_PATH)
+if(config.EMAIL_BODY_TYPE=="html"):body = standard.body
+else:body = config.EMAIL_BODY
 def send():
     progressBar(0,len(receivers_emails))
     for idx,receiver_email in enumerate(receivers_emails):
