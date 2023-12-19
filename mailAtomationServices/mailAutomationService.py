@@ -26,10 +26,11 @@ receivers_emails = list(config.RECIEVERS_EMAIL_ADDRESSES)
 subject =config.EMAIL_SUBJECT
 if(config.EMAIL_BODY_TYPE=="html"):body = standard.body
 else:body = config.EMAIL_BODY
+
 def send():
     progressBar(0,len(receivers_emails))
     for idx,receiver_email in enumerate(receivers_emails):
-        if(idx+1)%25==0:time.sleep(5)#delay for smtp
+        if(idx+1)%25==0:time.sleep(5)#delay for smtp cause it has a limit of 25 emails per minute
         em = EmailMessage()
         em['From'] = email_sender
         em['To'] = receiver_email
