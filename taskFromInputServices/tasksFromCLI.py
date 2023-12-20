@@ -1,5 +1,6 @@
 from config import TaskTypes
-tasks={"sat":[],"sun":[],"mon":[],"tue":[],"wed":[],"thu":[],"fri":[]}
+from utils.taskXmlTempUtil import createTaskTemp
+from tasksContentServices.tasksDict import tasks
 
 def getTasks():
     print("welcome to the task manager where you can add your tasks for the week")
@@ -13,9 +14,15 @@ def getTasks():
             if type not in TaskTypes:
                 print("task type is not valid")
                 continue
+
             print("do you want to add another task? (y/n)")
             answer=input()
             if answer=="n":
                 continueToInput=False
+            
+            #for now we will add the task to the list and work on the xml later
+            # tasks[day].append(createTaskTemp(name,status,str(TaskTypes.index(type))))
+                
             tasks[day].append({"name":name,"status":status,"type":TaskTypes.index(type)})
+
     return tasks
