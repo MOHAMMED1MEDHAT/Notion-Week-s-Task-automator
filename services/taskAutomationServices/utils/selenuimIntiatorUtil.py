@@ -8,12 +8,15 @@ import config
 def startService():
     #1-open chrome in debuging mode
     subprocess.run(f"chrome --remote-debugging-port={config.CHROME_DEBUGING_PORT}", shell=True)
+    # subprocess.run("chrome --remote-debugging-port=9222", shell=True)
 
     #2- connect to chrome
     chromeDebuggingServerLink=f"127.0.0.1:{config.CHROME_DEBUGING_PORT}"
 
     chrome_options = Options()
     chrome_options.add_experimental_option("debuggerAddress", chromeDebuggingServerLink)
+    # chrome_options = Options()
+    # chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
     chrome_driver = r"C:\Program Files (x86)\chromedriver.exe"
     driver = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
     driver.get(config.NOTION_TASK_PAGE)

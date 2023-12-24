@@ -5,7 +5,7 @@ from services.tasksContentServices.tasksDict import tasks
 
 if __name__=="__main__":
     #1) get the tasks from the cli
-    tasks=tasksFromCLI.getTasks(tasks)
+    # tasks=tasksFromCLI.getTasks(tasks)
     #2) add the tasks to notion
     taskCreationService.createTasks(tasks)
     #TODO:3) show a progress bar

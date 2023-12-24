@@ -6,9 +6,9 @@ from config import TaskTypes
 
 def getTasks(tasks):
     print("welcome to the task manager where you can add your tasks for the week")
-    for idx,day in enumerate(tasks):
-        dateNow=datetime.now().strftime('%b %d,20%y')
-        nextDay=int(dateNow[4:6])+idx+1
+    dateNow=datetime.now().strftime('%b %d,20%y')
+    for i in range(7):
+        nextDay=int(dateNow[4:6])+i+1
         nextDayDate=dateNow[:4]+str(nextDay)+dateNow[6:]
         print(f"Enter tasks for nextDay which is ({nextDayDate})")
         continueToInput=True
@@ -25,9 +25,9 @@ def getTasks(tasks):
             if answer=="n":
                 continueToInput=False
             
-            #for now we will add the task to the list and work on the xml later
-            # tasks[day].append(createTaskTemp(name,status,str(TaskTypes.index(type))))
-                
-            tasks[nextDayDate].append({"name":name,"status":status,"type":TaskTypes.index(type)})
+            if nextDayDate in tasks:
+                tasks[nextDayDate].append({"name": name, "status": status, "type": TaskTypes.index(type)})
+            else:
+                tasks[nextDayDate] = [{"name": name, "status": status, "type": TaskTypes.index(type)}]
 
     return tasks

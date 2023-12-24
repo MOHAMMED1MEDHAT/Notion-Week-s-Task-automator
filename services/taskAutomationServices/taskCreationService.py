@@ -1,17 +1,8 @@
-from services.taskAutomationServices.utils.selenuimIntiatorUtil import startService,endService
-from services.taskAutomationServices.utils.navigationFlowUtil import addTask
+from services.taskAutomationServices.utils.selenuimIntiatorUtil import startService
 
 def createTasks(tasks):    
     #1 intiate selenium
-    driver=startService()
-    #2 run navigation flow
-    for day in tasks:
-        for task in tasks[day]:
-            addTask(driver,day,task)
-        print(f"finished adding tasks for {day}")
-        #TODO: add a progress bar here
-    #3 close selenium
-    endService(driver)
+    startService(tasks)
 
 def progressBar(progress,total):
     percent=100*(progress/float(total))
