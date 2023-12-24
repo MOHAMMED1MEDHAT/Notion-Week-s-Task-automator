@@ -7,7 +7,8 @@ from services.taskAutomationServices.utils.navigationFlowUtil import addTask
 def createTasks(tasks):    
     #1 intiate selenium
     driver=startService()
-    time.sleep(10)
+    # time.sleep(10)
+    time.sleep(60)#TODO: remove this line
     #2 run navigation flow
     for day in tasks:
         print(f"Processing day: {day}")

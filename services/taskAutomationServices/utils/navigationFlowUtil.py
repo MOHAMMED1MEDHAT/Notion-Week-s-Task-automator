@@ -14,7 +14,7 @@ def addTask(driver,taskDate,task):
     #2 click settings btn
     # settings_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.settings_btn_XP))
     # settings_btn.click()
-    hover.move_to_element(createTasks_btn).move_by_offset(120,10).click().perform()
+    hover.move_to_element(createTasks_btn).move_by_offset(20,1).click().perform()
     #3 click the name txtbx.set_attribute("{taskName}")
     name_txtbx = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.name_txtbx_XP))
     name_txtbx.send_keys(str(task["name"]))
