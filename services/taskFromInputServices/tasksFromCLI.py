@@ -1,10 +1,16 @@
+from datetime import datetime
+
+#local imports
 from config import TaskTypes
 # from utils.taskXmlTempUtil import createTaskTemp
 
 def getTasks(tasks):
     print("welcome to the task manager where you can add your tasks for the week")
-    for day in tasks:
-        print("Enter tasks for "+day)
+    for idx,day in enumerate(tasks):
+        dateNow=datetime.now().strftime('%b %d,20%y')
+        nextDay=int(dateNow[4:6])+idx+1
+        nextDayDate=dateNow[:4]+str(nextDay)+dateNow[6:]
+        print(f"Enter tasks for nextDay which is ({nextDayDate})")
         continueToInput=True
         while continueToInput:
             name=input("please enter task name:")
