@@ -1,13 +1,8 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.wait import WebDriverWait
-import time
-import sys
 import subprocess
 
 #local imports
-# from utils import xPathLocationsUtil
 import config
 
 def startService():
