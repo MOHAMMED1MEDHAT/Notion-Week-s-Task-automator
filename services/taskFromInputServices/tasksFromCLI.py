@@ -1,11 +1,10 @@
 from config import TaskTypes
-from utils.taskXmlTempUtil import createTaskTemp
-from tasksContentServices.tasksDict import tasks
+# from utils.taskXmlTempUtil import createTaskTemp
 
-def getTasks():
+def getTasks(tasks):
     print("welcome to the task manager where you can add your tasks for the week")
     for day in tasks:
-        print("enter tasks for "+day)
+        print("Enter tasks for "+day)
         continueToInput=True
         while continueToInput:
             name=input("please enter task name:")

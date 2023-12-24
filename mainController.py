@@ -1,7 +1,8 @@
-from taskFromInputServices import tasksFromCLI
+from services.taskFromInputServices import tasksFromCLI
 
-from tasksContentServices.tasksDict import tasks
+from services.tasksContentServices.tasksDict import tasks
 
 #get the tasks from the cli
 tasks=tasksFromCLI.getTasks(tasks)
+
 
