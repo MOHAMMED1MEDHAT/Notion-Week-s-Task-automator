@@ -10,6 +10,8 @@ def createTasks(tasks):
             addTask(driver,day,task)
         print(f"finished adding tasks for {day}")
         #TODO: add a progress bar here
+    #3 close selenium
+    endService(driver)
 
 def progressBar(progress,total):
     percent=100*(progress/float(total))
