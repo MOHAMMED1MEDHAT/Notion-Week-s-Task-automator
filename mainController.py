@@ -1,4 +1,3 @@
-
 #local imports
 from services.taskFromInputServices import tasksFromCLI
 from services.taskAutomationServices import taskCreationService

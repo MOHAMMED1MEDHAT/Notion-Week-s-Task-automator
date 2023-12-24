@@ -1,5 +1,5 @@
-from utils.selenuimIntiatorUtil import startService,endService
-from utils.navigationFlowUtil import addTask
+from services.taskAutomationServices.utils.selenuimIntiatorUtil import startService,endService
+from services.taskAutomationServices.utils.navigationFlowUtil import addTask
 
 def createTasks(tasks):    
     #1 intiate selenium

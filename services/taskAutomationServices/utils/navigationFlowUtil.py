@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 
 #local imports
-import xPathLocationsUtil as xpLocations
+from services.taskAutomationServices.utils import xPathLocationsUtil as xpLocations
 
 def addTask(driver,taskDate,task):
     #1 hover over the create tasks btn
