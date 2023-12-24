@@ -1,6 +1,8 @@
+from calendar import c
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
+import time
 
 #local imports
 from services.taskAutomationServices.utils import xPathLocationsUtil as xpLocations
@@ -8,11 +10,11 @@ from services.taskAutomationServices.utils import xPathLocationsUtil as xpLocati
 def addTask(driver,taskDate,task):
     #1 hover over the create tasks btn
     createTasks_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.createTasks_btn_XP))
-    hover = ActionChains(driver)
-    hover.move_to_element(createTasks_btn).perform()
+    hover = ActionChains(driver,10000)
     #2 click settings btn
-    settings_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.settings_btn_XP))
-    settings_btn.click()
+    # settings_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.settings_btn_XP))
+    # settings_btn.click()
+    hover.move_to_element(createTasks_btn).move_by_offset(120,10).click().perform()
     #3 click the name txtbx.set_attribute("{taskName}")
     name_txtbx = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.name_txtbx_XP))
     name_txtbx.send_keys(str(task["name"]))
@@ -50,3 +52,6 @@ def addTask(driver,taskDate,task):
     #13 click create task btn
     createTasks_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.createTasks_btn_XP))
     createTasks_btn.click()
+
+
+    

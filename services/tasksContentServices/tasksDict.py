@@ -1,1 +1,1 @@
-tasks={}
+tasks={'Dec 25,2023': [{'name': 'fuck selenium', 'status': '0', 'type': 2}], 'Dec 26,2023': [{'name': 'fuck selenium', 'status': '0', 'type': 2}], 'Dec 27,2023': [{'name': 'fuck selenium', 'status': '0', 'type': 2}], 'Dec 28,2023': [{'name': 'fuck selenium', 'status': '0', 'type': 2}], 'Dec 29,2023': [{'name': 'fuck selenium', 'status': '0', 'type': 2}], 'Dec 30,2023': [{'name': 'fuck selenium', 'status': '0', 'type': 2}], 'Dec 31,2023': [{'name': 'fuck selenium', 'status': '0', 'type': 2}]}
