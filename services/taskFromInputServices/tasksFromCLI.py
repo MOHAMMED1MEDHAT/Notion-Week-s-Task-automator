@@ -28,6 +28,6 @@ def getTasks(tasks):
             #for now we will add the task to the list and work on the xml later
             # tasks[day].append(createTaskTemp(name,status,str(TaskTypes.index(type))))
                 
-            tasks[day].append({"name":name,"status":status,"type":TaskTypes.index(type)})
+            tasks[nextDayDate].append({"name":name,"status":status,"type":TaskTypes.index(type)})
 
     return tasks

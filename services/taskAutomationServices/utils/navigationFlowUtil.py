@@ -8,7 +8,7 @@ import sys
 #local imports
 import xPathLocationsUtil as xpLocations
 
-def addTask(driver,task):
+def addTask(driver,taskDate,task):
     #1 hover over the create tasks btn
     createTasks_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.createTasks_btn_XP))
     hover = ActionChains(driver)
@@ -37,6 +37,7 @@ def addTask(driver,task):
     pickDate_btn.click()
     #8 enter date dialog set_attribute("text","Dec 20,2023")
     setDate_dialog=WebDriverWait(driver,timeout=50).until(lambda el:el.find_element(By.XPATH,xpLocations.setDate_dialog_XP))
+    setDate_dialog.set_attribute("text",task)
     #9 click done btn
     #10 click chooseType dropdownBtn
     #11 click typeOption
