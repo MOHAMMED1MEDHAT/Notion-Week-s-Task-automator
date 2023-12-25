@@ -10,11 +10,12 @@ from services.taskAutomationServices.utils import xPathLocationsUtil as xpLocati
 def addTask(driver,taskDate,task):
     #1 hover over the create tasks btn
     createTasks_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.createTasks_btn_XP))
-    hover = ActionChains(driver,20*1000)
+    hover = ActionChains(driver,1*1000)
+    hover.move_to_element(createTasks_btn).move_by_offset(50,1).double_click().perform()
     #2 click settings btn
     # settings_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.settings_btn_XP))
-    # settings_btn.click()
-    hover.move_to_element(createTasks_btn).move_by_offset(100,1).click().perform()
+    # settings_btn_Actions=ActionChains(driver,1*1000)
+    # settings_btn_Actions.release(on_element=createTasks_btn).move_to_element(settings_btn).click().perform()
     #3 click the name txtbx.set_attribute("{taskName}")
     name_txtbx = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.name_txtbx_XP))
     name_txtbx.send_keys(str(task["name"]))
