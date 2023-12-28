@@ -5,9 +5,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 #local imports
-from services.taskAutomationServices.utils import xPathLocationsUtil as xpLocations
 
-def addTask(driver,taskDate,task):
+def addTask(driver,taskDate,task,xpLocations):
     #1 hover over the create tasks btn
     createTasks_btn = WebDriverWait(driver, timeout=50).until(lambda el: el.find_element(By.XPATH,xpLocations.createTasks_btn_XP))
     hover = ActionChains(driver,1*1000)

@@ -3,6 +3,7 @@ import time
 #local imports
 from services.taskAutomationServices.utils.selenuimIntiatorUtil import startService,endService
 from services.taskAutomationServices.utils.navigationFlowUtil import addTask
+from services.taskAutomationServices.utils import xPathLocationsUtil as xpLocations
 
 def createTasks(tasks):    
     #1 intiate selenium
@@ -14,7 +15,7 @@ def createTasks(tasks):
         print(f"Processing day: {day}")
         for task in tasks[day]:
             print("inside inner loop")
-            addTask(driver,day,task)
+            addTask(driver,day,task,xpLocations)
         print(f"finished adding tasks for {day}")
         #TODO: add a progress bar here
     #3 close selenium
