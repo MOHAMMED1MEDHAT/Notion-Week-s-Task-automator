@@ -13,4 +13,3 @@ if __name__=="__main__":
     #TODO:4) add a logger
     #TODO:5) add mail service notification
 
-    
